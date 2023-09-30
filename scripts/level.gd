@@ -45,7 +45,7 @@ func _on_player_drag_ended(original_pos: Vector2, new_pos: Vector2):
 		var dir = local_original_pos.direction_to(local_new_pos)
 		var next_pos = local_original_pos + dir
 
-		if not is_blocked(next_pos):
+		if not is_blocked(next_pos) and map_to_local(next_pos) != original_pos:
 			player.set_new_pos(map_to_local(next_pos))
 
 func is_blocked(pos: Vector2) -> bool:
