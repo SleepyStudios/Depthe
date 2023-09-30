@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqvk4did81vrc"]
+
+[ext_resource type="Script" path="res://scripts/map_object.gd" id="1_cqarq"]
+[ext_resource type="Texture2D" uid="uid://bkfre7acurhmn" path="res://sprites/key.png" id="1_pm3mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
+size = Vector2(12, 12)
+
+[node name="Key" type="Node2D"]
+script = ExtResource("1_cqarq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("1_pm3mj")
+
+[node name="Area2D" type="Area2D" parent="." groups=["pickups"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rec3o")

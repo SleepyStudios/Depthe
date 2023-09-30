@@ -1,6 +1,4 @@
-extends Area2D
-
-class_name Player
+class_name Player extends Area2D
 
 signal drag_ended(original_pos: float, new_pos: float)
 signal moved(new_pos: float)
@@ -32,7 +30,7 @@ func _input(event):
 		grabbed = false
 		drag_ended.emit(original_pos, get_global_mouse_position())
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and event.is_pressed():
@@ -42,3 +40,7 @@ func _on_input_event(viewport, event, shape_idx):
 func set_new_pos(new_pos: Vector2):
 	lerp_to_pos = new_pos
 	moved.emit(new_pos)
+
+func _on_area_entered(area):
+	if area.is_in_group("pickups"):
+		print((area.get_parent() as MapObject).data)

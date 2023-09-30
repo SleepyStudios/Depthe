@@ -4,6 +4,21 @@ extends TileMap
 
 func _ready():
 	player.drag_ended.connect(_on_player_drag_ended)
+	_replace_tiles_with_scenes()
+	
+func _replace_tiles_with_scenes():
+	for layer_id in range(get_layers_count()):
+		for tile_pos in get_used_cells(layer_id):
+			var data = get_cell_tile_data(layer_id, tile_pos)
+			if data and data.get_custom_data("scene"):
+				set_cell(layer_id, tile_pos, -1)
+
+				var scene_name = data.get_custom_data("scene")
+				var scene = load("res://map_objects/%s.tscn" % [scene_name])
+
+				var obj = scene.instantiate()
+				obj.create(map_to_local(tile_pos), scene_name, data.get_custom_data("map_object_data"))
+				get_parent().add_child.call_deferred(obj)
 
 func _is_diagonal(original_pos: Vector2, new_pos: Vector2) -> bool:
 	var dir = original_pos.direction_to(new_pos).abs()
