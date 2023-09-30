@@ -1,7 +1,7 @@
 class_name Player extends Area2D
 
-signal drag_ended(original_pos: float, new_pos: float)
-signal moved(new_pos: float)
+signal drag_ended(original_pos: Vector2, new_pos: Vector2)
+signal moved(new_pos: Vector2)
 
 @onready var dragged_sprite: Sprite2D = $DraggedSprite
 @onready var level: Level = $"../Level"
@@ -59,5 +59,5 @@ func _on_area_entered(area):
 			area.get_parent().queue_free()
 
 		if area.is_in_group("hazards"):
-			get_tree().reload_current_scene()
+			Global.kill_player()
 
