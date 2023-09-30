@@ -25,6 +25,9 @@ func _is_diagonal(original_pos: Vector2, new_pos: Vector2) -> bool:
 	var dir = original_pos.direction_to(new_pos).abs()
 	return dir.x == dir.y
 
+func is_pointing_diagonally(original_pos: Vector2, new_pos: Vector2) -> bool:
+	return _is_diagonal(local_to_map(original_pos), local_to_map(new_pos))
+
 func _get_layer_by_name(layer_name: String) -> int:
 	for layer_id in range(get_layers_count()):
 		if get_layer_name(layer_id) == layer_name:

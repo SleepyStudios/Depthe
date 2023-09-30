@@ -21,7 +21,8 @@ func _ready():
 func _process(delta):
 	if grabbed:
 		dragged_sprite.visible = true
-		dragged_sprite.position = get_local_mouse_position()
+		dragged_sprite.look_at(get_global_mouse_position())
+		dragged_sprite.modulate.a = 0.4 if level.is_pointing_diagonally(position, get_global_mouse_position()) else 0.8
 	else:
 		dragged_sprite.visible = false
 		position = position.lerp(lerp_to_pos, 20 * delta)
