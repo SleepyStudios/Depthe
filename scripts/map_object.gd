@@ -1,6 +1,6 @@
 class_name MapObject extends Node2D
 
-var data: Dictionary
+@export var data: Dictionary
 
 func create(position: Vector2, scene: String, data: Dictionary):
 	self.position = position

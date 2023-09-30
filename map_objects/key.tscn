@@ -13,7 +13,7 @@ script = ExtResource("1_cqarq")
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("1_pm3mj")
 
-[node name="Area2D" type="Area2D" parent="." groups=["pickups"]]
+[node name="Area2D" type="Area2D" parent="." groups=["keys"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rec3o")

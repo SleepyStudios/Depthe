@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm2kcrs2c6apk"]
+
+[ext_resource type="Script" path="res://scripts/pressure_plate.gd" id="1_cce1n"]
+[ext_resource type="Texture2D" uid="uid://d21k4muhfx4yl" path="res://sprites/pressure plate.png" id="2_sno2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhxus"]
+atlas = ExtResource("2_sno2c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uipjf"]
+atlas = ExtResource("2_sno2c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tiet4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhxus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uipjf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
+size = Vector2(12, 12)
+
+[node name="Pressure Plate" type="Node2D"]
+script = ExtResource("1_cce1n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tiet4")
+frame = 1
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rec3o")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

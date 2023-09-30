@@ -4,10 +4,14 @@ signal drag_ended(original_pos: float, new_pos: float)
 signal moved(new_pos: float)
 
 @onready var dragged_sprite: Sprite2D = $DraggedSprite
+@onready var level: Level = $"../Level"
 
 var grabbed: bool
 var original_pos: Vector2
 var lerp_to_pos: Vector2
+
+var keys: int
+var apples: int
 
 func _ready():
 	original_pos = position
@@ -39,8 +43,17 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 func set_new_pos(new_pos: Vector2):
 	lerp_to_pos = new_pos
-	moved.emit(new_pos)
+	moved.emit(lerp_to_pos)
 
 func _on_area_entered(area):
-	if area.is_in_group("pickups"):
-		print((area.get_parent() as MapObject).data)
+	if level.is_same_tile(lerp_to_pos, area.get_parent().position):
+		var data = (area.get_parent() as MapObject).data
+		print(data)
+
+		if area.is_in_group("keys"):
+			keys += 1
+			area.get_parent().queue_free()
+
+		if area.is_in_group("apples"):
+			apples += 1
+			area.get_parent().queue_free()
