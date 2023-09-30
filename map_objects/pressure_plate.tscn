@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://bm2kcrs2c6apk"]
 
-[ext_resource type="Script" path="res://scripts/pressure_plate.gd" id="1_cce1n"]
-[ext_resource type="Texture2D" uid="uid://d21k4muhfx4yl" path="res://sprites/pressure plate.png" id="2_sno2c"]
+[ext_resource type="Script" path="res://scripts/switch.gd" id="1_ejvcx"]
+[ext_resource type="Texture2D" uid="uid://d21k4muhfx4yl" path="res://sprites/switch.png" id="2_s8qrr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhxus"]
-atlas = ExtResource("2_sno2c")
+atlas = ExtResource("2_s8qrr")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uipjf"]
-atlas = ExtResource("2_sno2c")
+atlas = ExtResource("2_s8qrr")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tiet4"]
@@ -28,8 +28,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
 size = Vector2(12, 12)
 
-[node name="Pressure Plate" type="Node2D"]
-script = ExtResource("1_cce1n")
+[node name="Switch" type="Node2D"]
+script = ExtResource("1_ejvcx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tiet4")
