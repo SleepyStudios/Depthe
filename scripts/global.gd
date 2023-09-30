@@ -10,8 +10,8 @@ func next_level():
 	apples_collected += _get_player().apples
 	current_level += 1
 	
-	var new_scene = load("res://scenes/levels/%s.tscn" % [current_level]) 
-	get_tree().root.add_child(new_scene.instantiate())
+	# var new_scene = load("res://scenes/levels/%s.tscn" % [current_level]) 
+	# get_tree().root.add_child(new_scene.instantiate())
 
 func kill_player():
 	get_tree().reload_current_scene()
