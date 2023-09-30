@@ -65,7 +65,8 @@ func _on_player_moved(new_pos: Vector2):
 	var data = get_cell_tile_data(_get_layer_by_name("Interactables"), local_to_map(new_pos))
 	if data:
 		match data.get_custom_data("interaction"):
-			"ladder": print("next level")
+			"ladder":
+				Global.next_level()
 
 func add_blocked_tile(pos: Vector2):
 	set_cell(_get_collision_layer(), local_to_map(pos), 0, Vector2i(4, 1))

@@ -43,7 +43,7 @@ custom_data_layer_4/name = "interaction"
 custom_data_layer_4/type = 4
 sources/0 = SubResource("TileSetAtlasSource_p3fh4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(72, 72)

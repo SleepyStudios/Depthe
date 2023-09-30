@@ -57,3 +57,7 @@ func _on_area_entered(area):
 		if area.is_in_group("apples"):
 			apples += 1
 			area.get_parent().queue_free()
+
+		if area.is_in_group("hazards"):
+			get_tree().reload_current_scene()
+
