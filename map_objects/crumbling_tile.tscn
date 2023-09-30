@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh332iyrnbajp"]
+
+[ext_resource type="Script" path="res://scripts/crumbling_tile.gd" id="1_tdts7"]
+[ext_resource type="Texture2D" uid="uid://c1n18l65gowr3" path="res://sprites/crumbling tile.png" id="2_vn3ci"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3rcv"]
+atlas = ExtResource("2_vn3ci")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtv0o"]
+atlas = ExtResource("2_vn3ci")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6xei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3rcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtv0o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
+size = Vector2(12, 12)
+
+[node name="Crumbling Tile" type="Node2D"]
+script = ExtResource("1_tdts7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c6xei")
+
+[node name="Area2D" type="Area2D" parent="." groups=["hazards"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rec3o")
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

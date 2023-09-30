@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://6hd5rumgxi83"]
 
-[ext_resource type="Texture2D" uid="uid://b7j77fmrnnvn2" path="res://tilemap.png" id="1_ynq4d"]
+[ext_resource type="Texture2D" uid="uid://cjvg5idrepxc3" path="res://tilemap.png" id="1_ynq4d"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="2_bjpbi"]
 [ext_resource type="PackedScene" uid="uid://bm2kcrs2c6apk" path="res://map_objects/pressure_plate.tscn" id="3_2dcgb"]
 [ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://map_objects/spikes.tscn" id="4_2bc62"]
@@ -27,6 +27,8 @@ texture = ExtResource("1_ynq4d")
 4:1/0 = 0
 4:1/0/custom_data_0 = true
 3:1/0 = 0
+2:1/0 = 0
+2:1/0/custom_data_1 = "crumbling_tile"
 
 [sub_resource type="TileSet" id="TileSet_b3dre"]
 custom_data_layer_0/name = "blocked"
@@ -51,7 +53,7 @@ zoom = Vector2(6, 6)
 tile_set = SubResource("TileSet_b3dre")
 format = 2
 layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(393220, 196608, 1, 327684, 196608, 1, 262148, 196608, 1, 196612, 196608, 1, 196613, 196608, 1, 262149, 196608, 1, 327685, 196608, 1, 262150, 196608, 1, 262147, 196608, 1, 196611, 196608, 1, 327683, 196608, 1, 262146, 196608, 1)
+layer_0/tile_data = PackedInt32Array(393220, 196608, 1, 327684, 196608, 1, 262148, 131072, 1, 196612, 196608, 1, 196613, 196608, 1, 262149, 196608, 1, 327685, 196608, 1, 262150, 196608, 1, 262147, 196608, 1, 196611, 196608, 1, 327683, 196608, 1, 262146, 196608, 1)
 layer_1/name = ""
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)

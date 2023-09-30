@@ -66,3 +66,6 @@ func _on_player_moved(new_pos: Vector2):
 	if data:
 		match data.get_custom_data("interaction"):
 			"ladder": print("next level")
+
+func add_blocked_tile(pos: Vector2):
+	set_cell(_get_collision_layer(), local_to_map(pos), 0, Vector2i(4, 1))
