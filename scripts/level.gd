@@ -68,5 +68,8 @@ func _on_player_moved(new_pos: Vector2):
 			"ladder":
 				Global.next_level()
 
-func add_blocked_tile(pos: Vector2):
-	set_cell(_get_collision_layer(), local_to_map(pos), 0, Vector2i(4, 1))
+func add_blocked_tile(pos: Vector2, tile_vec = Vector2i(4, 1)):
+	set_cell(_get_collision_layer(), local_to_map(pos), 0, tile_vec)
+
+func clear_blocked_tile(pos: Vector2):
+	set_cell(_get_collision_layer(), local_to_map(pos), -1)
