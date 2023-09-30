@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmotolxmmtq3p"]
 
-[ext_resource type="Script" path="res://scripts/snake.gd" id="1_2a8yw"]
-[ext_resource type="Texture2D" uid="uid://dsf3e8k31k1pb" path="res://sprites/snake.png" id="2_6wqlv"]
+[ext_resource type="Script" path="res://scripts/snake.gd" id="1_kk08m"]
+[ext_resource type="Texture2D" uid="uid://dsf3e8k31k1pb" path="res://sprites/snake.png" id="2_i66ow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
 size = Vector2(12, 12)
 
 [node name="Snake" type="Node2D"]
-script = ExtResource("1_2a8yw")
+script = ExtResource("1_kk08m")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("2_6wqlv")
+texture = ExtResource("2_i66ow")
 
 [node name="Area2D" type="Area2D" parent="." groups=["hazards"]]
 

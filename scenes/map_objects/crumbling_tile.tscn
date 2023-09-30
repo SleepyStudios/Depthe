@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://dh332iyrnbajp"]
 
-[ext_resource type="Script" path="res://scripts/crumbling_tile.gd" id="1_tdts7"]
-[ext_resource type="Texture2D" uid="uid://c1n18l65gowr3" path="res://sprites/crumbling tile.png" id="2_vn3ci"]
+[ext_resource type="Script" path="res://scripts/crumbling_tile.gd" id="1_0abgy"]
+[ext_resource type="Texture2D" uid="uid://c1n18l65gowr3" path="res://sprites/crumbling tile.png" id="2_cxwh7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3rcv"]
-atlas = ExtResource("2_vn3ci")
+atlas = ExtResource("2_cxwh7")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtv0o"]
-atlas = ExtResource("2_vn3ci")
+atlas = ExtResource("2_cxwh7")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6xei"]
@@ -29,7 +29,7 @@ animations = [{
 size = Vector2(12, 12)
 
 [node name="Crumbling Tile" type="Node2D"]
-script = ExtResource("1_tdts7")
+script = ExtResource("1_0abgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c6xei")

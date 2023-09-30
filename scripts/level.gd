@@ -15,7 +15,7 @@ func _replace_tiles_with_scenes():
 				set_cell(layer_id, tile_pos, -1)
 
 				var scene_name = data.get_custom_data("scene")
-				var scene = load("res://map_objects/%s.tscn" % [scene_name])
+				var scene = load("res://scenes/map_objects/%s.tscn" % [scene_name])
 
 				var obj = scene.instantiate()
 				obj.create(map_to_local(tile_pos), scene_name, data.get_custom_data("map_object_data"))
