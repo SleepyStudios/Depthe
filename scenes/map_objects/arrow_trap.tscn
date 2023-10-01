@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://drs4n8vopgb30"]
+
+[ext_resource type="Script" path="res://scripts/arrow_trap.gd" id="1_4ljri"]
+[ext_resource type="Texture2D" uid="uid://b1e5njylqsphv" path="res://sprites/arrow_trap.png" id="2_4agpy"]
+[ext_resource type="Texture2D" uid="uid://bx1ageexa62k" path="res://sprites/arrow.png" id="3_3r2op"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngimu"]
+size = Vector2(3, 14)
+
+[node name="ArrowTrap" type="Node2D"]
+script = ExtResource("1_4ljri")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("2_4agpy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rec3o")
+
+[node name="Arrow" type="Node2D" parent="."]
+position = Vector2(2.08165e-12, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow"]
+position = Vector2(0.5, 2.08165e-12)
+texture = ExtResource("3_3r2op")
+
+[node name="Area2D" type="Area2D" parent="Arrow/Sprite2D" groups=["arrows", "hazards"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/Sprite2D/Area2D"]
+position = Vector2(-0.5, -2.08165e-12)
+shape = SubResource("RectangleShape2D_ngimu")
+debug_color = Color(0.764706, 0.356863, 0.701961, 0.419608)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Arrow"]
+rect = Rect2(-2, -8, 4, 16)
+
+[connection signal="screen_exited" from="Arrow/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

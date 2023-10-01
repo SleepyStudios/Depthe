@@ -47,10 +47,7 @@ func set_new_pos(new_pos: Vector2):
 	moved.emit(lerp_to_pos)
 
 func _on_area_entered(area):
-	if level.is_same_tile(lerp_to_pos, area.get_parent().position):
-		var data = (area.get_parent() as MapObject).data
-		print(data)
-
+	if level.is_same_tile(lerp_to_pos, area.get_parent().position) or area.is_in_group("arrows"):
 		if area.is_in_group("keys"):
 			keys += 1
 			area.get_parent().queue_free()
