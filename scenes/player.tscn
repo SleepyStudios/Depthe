@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c883xmrkudb7w"]
+[gd_scene load_steps=14 format=3 uid="uid://c883xmrkudb7w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_y45kh"]
 [ext_resource type="Texture2D" uid="uid://d1dh54pg55tep" path="res://sprites/player.png" id="2_p7005"]
 [ext_resource type="Texture2D" uid="uid://bbilob1csutwi" path="res://sprites/move_arrow.png" id="3_38emc"]
 [ext_resource type="Texture2D" uid="uid://bglryswgjxaab" path="res://sprites/blood.png" id="4_ejfwu"]
+[ext_resource type="AudioStream" uid="uid://bq41smikjrjli" path="res://sounds/footsteps_1.ogg" id="5_3e5o6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw7ka"]
 size = Vector2(16, 16)
@@ -162,7 +163,8 @@ initial_velocity_max = 90.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 2.08167e-14
 angle_max = 360.0
-scale_min = 0.6
+scale_min = 0.8
+scale_max = 1.2
 color_ramp = SubResource("GradientTexture1D_3btgv")
 
 [node name="Player" type="Area2D"]
@@ -199,6 +201,9 @@ one_shot = true
 speed_scale = 0.5
 explosiveness = 0.4
 randomness = 1.0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3e5o6")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
