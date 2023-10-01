@@ -22,7 +22,7 @@ Global="*res://scripts/global.gd"
 [display]
 
 window/size/resizable=false
-mouse_cursor/tooltip_position_offset=Vector2(12, -90)
+mouse_cursor/tooltip_position_offset=Vector2(2.08165e-12, 2.08165e-12)
 
 [input]
 
