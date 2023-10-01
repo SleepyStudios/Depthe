@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
-size = Vector2(12, 12)
+size = Vector2(8, 8)
 
 [node name="Switch" type="Node2D"]
 script = ExtResource("1_ejvcx")
