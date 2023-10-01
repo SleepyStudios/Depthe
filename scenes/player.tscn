@@ -172,7 +172,7 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_1v2vl"]
-offsets = PackedFloat32Array(0, 0.326389, 1)
+offsets = PackedFloat32Array(0, 0.4, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.627451, 0.627451, 0.627451, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3btgv"]
@@ -182,15 +182,13 @@ gradient = SubResource("Gradient_1v2vl")
 particle_flag_disable_z = true
 direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 spread = 180.0
-flatness = 1.0
 gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 initial_velocity_min = 40.0
 initial_velocity_max = 90.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 2.08167e-14
 angle_max = 360.0
-scale_min = 0.8
-scale_max = 1.2
+scale_max = 1.3
 color_ramp = SubResource("GradientTexture1D_3btgv")
 
 [node name="Player" type="Area2D"]
@@ -219,14 +217,15 @@ libraries = {
 [node name="BloodParticles" type="GPUParticles2D" parent="."]
 z_index = 6
 emitting = false
-amount = 20
+amount = 30
 process_material = SubResource("ParticleProcessMaterial_fikvh")
 texture = ExtResource("4_ejfwu")
 lifetime = 0.2
 one_shot = true
 speed_scale = 0.5
-explosiveness = 0.4
+explosiveness = 0.5
 randomness = 1.0
+trail_lifetime = 0.4
 
 [node name="Footsteps1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3e5o6")
