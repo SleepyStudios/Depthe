@@ -5,9 +5,21 @@ var apples_collected = 0
 var time = 0
 var deaths = 0
 var moves = 0
+var max_level = 0
 
 var player_is_dead: bool
 var go_to_next_level: bool
+
+func _ready():
+	var base_path = "res://scenes/levels"
+	var dir = DirAccess.open(base_path)
+	dir.list_dir_begin()
+
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name.begins_with("level_"):
+			max_level += 1
+		file_name = dir.get_next()
 
 func _get_player() -> Player:
 	return get_node("../Level/Player")
