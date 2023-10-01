@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://wtjhw1jtwatl"]
+
+[ext_resource type="Script" path="res://scripts/trap_door.gd" id="1_hokej"]
+[ext_resource type="Texture2D" uid="uid://bfaq6am7cx62c" path="res://sprites/trapdoor.png" id="2_2hosa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3fk2"]
+atlas = ExtResource("2_2hosa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00vtf"]
+atlas = ExtResource("2_2hosa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_146b8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3fk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00vtf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
+size = Vector2(12, 12)
+
+[node name="TrapDoor" type="Node2D"]
+script = ExtResource("1_hokej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_146b8")
+
+[node name="Area2D" type="Area2D" parent="." groups=["hazards"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rec3o")

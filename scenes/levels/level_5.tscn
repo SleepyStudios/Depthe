@@ -53,6 +53,6 @@ position = Vector2(56, 72)
 position = Vector2(88, 56)
 open = true
 
-[node name="Switch" parent="." node_paths=PackedStringArray("doors") instance=ExtResource("4_hyrvb")]
+[node name="Switch" parent="." node_paths=PackedStringArray("toggleables") instance=ExtResource("4_hyrvb")]
 position = Vector2(72, 72)
-doors = [NodePath("../Door")]
+toggleables = [NodePath("../Door")]

@@ -33,8 +33,6 @@ script = ExtResource("1_ejvcx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tiet4")
-frame = 1
-frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
