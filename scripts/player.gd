@@ -5,6 +5,8 @@ signal moved(new_pos: Vector2)
 
 @onready var dragged_sprite: Sprite2D = $DraggedSprite
 @onready var level: Level = $"../Level"
+@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var blood: GPUParticles2D = $BloodParticles
 
 var grabbed: bool
 var original_pos: Vector2
@@ -65,5 +67,15 @@ func _on_area_entered(area):
 			area.get_parent().queue_free()
 
 		if area.is_in_group("hazards"):
+			if area.is_in_group("trap doors"):
+				anim.play("trap_door")
+			else:
+				emit_blood()
+
 			Global.kill_player()
 
+func emit_blood():
+	blood.emitting = true
+
+func play_ladder_anim():
+	anim.play("up_ladder")

@@ -22,6 +22,7 @@ func _on_player_moved(new_pos: Vector2):
 
 	var original_pos = position
 	position += dir
+	sprite.flip_h = !sprite.flip_h
 
 	if level.is_same_tile(player.original_pos, position) and level.is_same_tile(new_pos, original_pos):
-		Global.kill_player()
+		position = new_pos

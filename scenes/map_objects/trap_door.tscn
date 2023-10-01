@@ -34,7 +34,7 @@ script = ExtResource("1_hokej")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_146b8")
 
-[node name="Area2D" type="Area2D" parent="." groups=["hazards"]]
+[node name="Area2D" type="Area2D" parent="." groups=["hazards", "trap doors"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rec3o")

@@ -69,6 +69,7 @@ func _on_player_moved(new_pos: Vector2):
 	if data:
 		match data.get_custom_data("interaction"):
 			"ladder":
+				player.play_ladder_anim()
 				Global.next_level()
 
 func add_blocked_tile(pos: Vector2, tile_vec = Vector2i(4, 1)):
