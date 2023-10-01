@@ -30,8 +30,11 @@ func _on_player_moved(_new_pos: Vector2):
 func _process(delta):
 	if arrow.visible and not Global.is_game_paused():
 		arrow.position += Vector2.DOWN * 150.0 * delta
+		var map_pos = level.local_to_map(arrow.global_position)
+		if level.is_blocked(map_pos) and not level.is_water(map_pos):
+			reset_arrow()
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
+func reset_arrow():
 	arrow.visible = false
 	arrow.position = original_arrow_pos
 	will_fire = false

@@ -20,6 +20,9 @@ texture = ExtResource("1_4uq36")
 3:0/animation_frame_1/duration = 1.0
 3:0/0 = 0
 3:0/0/custom_data_0 = true
+3:0/0/custom_data_2 = {
+"water": true
+}
 0:1/0 = 0
 0:1/0/custom_data_1 = "snake"
 1:1/0 = 0

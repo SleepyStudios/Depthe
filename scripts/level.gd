@@ -61,6 +61,13 @@ func is_blocked(pos: Vector2) -> bool:
 
 	return blocked
 
+func is_water(pos: Vector2) -> bool:
+	var data = get_cell_tile_data(_get_collision_layer(), pos)
+	if not data:
+		return false
+
+	return data.get_custom_data("map_object_data").get("water", false)
+
 func is_same_tile(pos1: Vector2, pos2: Vector2) -> bool:
 	return local_to_map(pos1) == local_to_map(pos2)
 

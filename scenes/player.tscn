@@ -172,7 +172,7 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_1v2vl"]
-offsets = PackedFloat32Array(0, 0.4, 1)
+offsets = PackedFloat32Array(0, 0.393519, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.627451, 0.627451, 0.627451, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3btgv"]
