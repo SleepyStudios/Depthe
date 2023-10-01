@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm2kcrs2c6apk"]
+[gd_scene load_steps=8 format=3 uid="uid://bm2kcrs2c6apk"]
 
 [ext_resource type="Script" path="res://scripts/switch.gd" id="1_ejvcx"]
 [ext_resource type="Texture2D" uid="uid://d21k4muhfx4yl" path="res://sprites/switch.png" id="2_s8qrr"]
+[ext_resource type="AudioStream" uid="uid://cbyill08kmo3c" path="res://sounds/lever.ogg" id="3_og73b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhxus"]
 atlas = ExtResource("2_s8qrr")
@@ -26,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
-size = Vector2(8, 8)
+size = Vector2(12, 12)
 
 [node name="Switch" type="Node2D"]
 script = ExtResource("1_ejvcx")
@@ -38,5 +39,8 @@ sprite_frames = SubResource("SpriteFrames_tiet4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rec3o")
+
+[node name="Lever" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_og73b")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
