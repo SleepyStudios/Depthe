@@ -27,5 +27,7 @@ func begin_transition():
 func _finish_transition():
 	if transitioning:
 		Global.scene_transition_finished()
-		_get_player().moved.connect(_on_player_moved)
 		scene_anim.play("scale_down")
+
+		if _get_player():
+			_get_player().moved.connect(_on_player_moved)
