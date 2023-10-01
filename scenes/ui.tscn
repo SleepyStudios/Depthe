@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwyv87p58ewlf"]
+[gd_scene load_steps=9 format=3 uid="uid://cwyv87p58ewlf"]
 
 [ext_resource type="Script" path="res://scripts/scene_transition.gd" id="1_t6unb"]
 [ext_resource type="Texture2D" uid="uid://xddqyumgg01o" path="res://sprites/dark_circle.png" id="2_fk036"]
+[ext_resource type="Texture2D" uid="uid://dv1mfmt4ubn85" path="res://sprites/cursor_grab.png" id="3_a81ud"]
+[ext_resource type="Texture2D" uid="uid://hgcgoyyvd4fp" path="res://sprites/cursor.png" id="4_fnorb"]
+[ext_resource type="Script" path="res://scripts/cursor.gd" id="5_qaj2b"]
 
 [sub_resource type="Animation" id="Animation_51mo6"]
 resource_name = "scale_down"
@@ -49,6 +52,20 @@ _data = {
 "scale_down": SubResource("Animation_51mo6")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0060"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a81ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fnorb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_t6unb")
 
@@ -74,3 +91,7 @@ autoplay = "scale_down"
 libraries = {
 "": SubResource("AnimationLibrary_x5jko")
 }
+
+[node name="Cursor" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k0060")
+script = ExtResource("5_qaj2b")

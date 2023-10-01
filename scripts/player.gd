@@ -9,6 +9,7 @@ signal moved(new_pos: Vector2)
 @onready var blood: GPUParticles2D = $BloodParticles
 @onready var footsteps1: AudioStreamPlayer = $Footsteps1
 @onready var footsteps2: AudioStreamPlayer = $Footsteps2
+@onready var cursor: Cursor = $"../UI/Cursor"
 
 var grabbed: bool
 var original_pos: Vector2
@@ -47,6 +48,7 @@ func _input(event):
 			and grabbed:
 		grabbed = false
 		drag_ended.emit(original_pos, get_global_mouse_position())
+		cursor.stop_dragging()
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
@@ -55,6 +57,7 @@ func _on_input_event(_viewport, event, _shape_idx):
 			and not Global.is_game_paused():
 		original_pos = position
 		grabbed = true
+		cursor.start_dragging()
 
 func set_new_pos(new_pos: Vector2):
 	Global.moves += 1
