@@ -11,6 +11,8 @@ var player_is_dead: bool
 var go_to_next_level: bool
 
 func _ready():
+	RenderingServer.set_default_clear_color(Color.BLACK)
+
 	var base_path = "res://scenes/levels"
 	var dir = DirAccess.open(base_path)
 	dir.list_dir_begin()
@@ -24,9 +26,6 @@ func _ready():
 func _get_player() -> Player:
 	return get_node("../Level/Player")
 
-func _get_scene_transition_animation_player() -> SceneTransition:
-	return get_node("../Level/UI")
-
 func _process(delta):
 	if not is_game_paused():
 		time += delta
@@ -34,7 +33,7 @@ func _process(delta):
 func next_level():
 	if not go_to_next_level:
 		go_to_next_level = true
-		_get_scene_transition_animation_player().begin_transition()
+		UI.begin_transition()
 		return
 
 	go_to_next_level = false
@@ -56,7 +55,7 @@ func kill_player():
 	if not player_is_dead:
 		player_is_dead = true
 		deaths += 1
-		_get_scene_transition_animation_player().begin_transition()
+		UI.begin_transition()
 		return
 
 	player_is_dead = false

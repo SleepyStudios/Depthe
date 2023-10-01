@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmuik7e4rjvas"]
+[gd_scene load_steps=4 format=3 uid="uid://bmuik7e4rjvas"]
 
 [ext_resource type="Script" path="res://scripts/end_stats.gd" id="1_mwl8i"]
 [ext_resource type="Theme" uid="uid://dvdyvveigfte2" path="res://ui_theme.tres" id="1_xsjgx"]
 [ext_resource type="Texture2D" uid="uid://bpibauyv6r53h" path="res://sprites/apple.png" id="2_f3clk"]
-[ext_resource type="PackedScene" uid="uid://cwyv87p58ewlf" path="res://scenes/ui.tscn" id="2_mejsj"]
 
 [node name="End" type="Node2D"]
 script = ExtResource("1_mwl8i")
@@ -32,7 +31,7 @@ theme = ExtResource("1_xsjgx")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "
-[center][wave amp=50.0 freq=5.0 connected=1]YOU DID IT YOU BEAT THE GAME[/wave][/center]"
+[center][wave amp=50.0 freq=5.0 connected=1]You found your way to freedom[/wave][/center]"
 
 [node name="Stats" type="HFlowContainer" parent="CanvasLayer"]
 anchors_preset = 8
@@ -114,6 +113,3 @@ theme_override_font_sizes/font_size = 48
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="UI" parent="." instance=ExtResource("2_mejsj")]
-visible = false
