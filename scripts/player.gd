@@ -57,6 +57,8 @@ func _on_input_event(_viewport, event, _shape_idx):
 		grabbed = true
 
 func set_new_pos(new_pos: Vector2):
+	Global.moves += 1
+
 	lerp_to_pos = new_pos
 	moved.emit(lerp_to_pos)
 	if randi()%2 == 0:

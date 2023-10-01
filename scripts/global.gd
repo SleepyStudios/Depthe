@@ -1,7 +1,10 @@
 extends Node
 
-var apples_collected = 0
 var current_level = 1
+var apples_collected = 0
+var time = 0
+var deaths = 0
+var moves = 0
 
 var player_is_dead: bool
 var go_to_next_level: bool
@@ -11,6 +14,10 @@ func _get_player() -> Player:
 
 func _get_scene_transition_animation_player() -> SceneTransition:
 	return get_node("../Level/UI")
+
+func _process(delta):
+	if not is_game_paused():
+		time += delta
 
 func next_level():
 	if not go_to_next_level:
@@ -35,6 +42,7 @@ func next_level():
 func kill_player():
 	if not player_is_dead:
 		player_is_dead = true
+		deaths += 1
 		_get_scene_transition_animation_player().begin_transition()
 		return
 
