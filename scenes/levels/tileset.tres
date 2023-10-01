@@ -30,6 +30,7 @@ texture = ExtResource("1_4uq36")
 2:1/0 = 0
 2:1/0/custom_data_1 = "crumbling_tile"
 0:2/0 = 0
+0:2/0/custom_data_0 = true
 0:3/0 = 0
 0:3/0/custom_data_4 = "ladder"
 2:2/0 = 0

@@ -7,6 +7,7 @@ class_name ArrowTrap extends MapObject
 
 var will_fire = false
 var original_arrow_pos: Vector2
+var toggle_hold = false
 
 func _ready():
 	player.moved.connect(_on_player_moved)
@@ -14,7 +15,12 @@ func _ready():
 	original_arrow_pos = arrow.position
 
 func toggle():
+	if toggle_hold:
+		toggle_hold = false
+		return
+
 	will_fire = true
+	toggle_hold = true
 
 func _on_player_moved(_new_pos: Vector2):
 	if will_fire and not arrow.visible:
