@@ -14,7 +14,6 @@ func _on_player_moved(new_pos: Vector2):
 		dir *= -1
 		sprite.flip_v = !sprite.flip_v
 
-
 	var original_pos = position
 	position.y += dir
 

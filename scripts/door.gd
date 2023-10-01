@@ -15,6 +15,6 @@ func toggle():
 
 func _toggle_tile():
 	if sprite.frame == 0:
-		level.add_blocked_tile(position, Vector2(0, 2))
+		level.add_blocked_tile(position, Vector2(4, 4))
 	else:
 		level.clear_blocked_tile(position)

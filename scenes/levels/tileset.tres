@@ -1,0 +1,46 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://mee7mtgr0vjc"]
+
+[ext_resource type="Texture2D" uid="uid://cjvg5idrepxc3" path="res://sprites/tilemap.png" id="1_4uq36"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p3fh4"]
+texture = ExtResource("1_4uq36")
+0:0/0 = 0
+0:0/0/custom_data_1 = "key"
+0:0/0/custom_data_2 = {
+"bleh": "blah"
+}
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+2:0/0/custom_data_3 = true
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_1 = "snake"
+1:1/0 = 0
+1:1/0/custom_data_1 = "apple"
+4:1/0 = 0
+4:1/0/custom_data_0 = true
+3:1/0 = 0
+2:1/0 = 0
+2:1/0/custom_data_1 = "crumbling_tile"
+0:2/0 = 0
+0:3/0 = 0
+0:3/0/custom_data_4 = "ladder"
+2:2/0 = 0
+1:2/0 = 0
+4:4/0 = 0
+4:4/0/custom_data_0 = true
+
+[resource]
+custom_data_layer_0/name = "blocked"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "scene"
+custom_data_layer_1/type = 4
+custom_data_layer_2/name = "map_object_data"
+custom_data_layer_2/type = 27
+custom_data_layer_3/name = "requires_key"
+custom_data_layer_3/type = 1
+custom_data_layer_4/name = "interaction"
+custom_data_layer_4/type = 4
+sources/0 = SubResource("TileSetAtlasSource_p3fh4")
