@@ -24,16 +24,18 @@ func _ready():
 	
 func _process(delta):
 	if grabbed:
-		dragged_sprite.visible = true
-
 		var tile_pos = level.local_to_map(get_global_mouse_position())
-		var dir_to_tile_pos = Vector2(level.local_to_map(position)).direction_to(tile_pos)
+		var player_map_pos = Vector2(level.local_to_map(position))
+		var dir_to_tile_pos = player_map_pos.direction_to(tile_pos)
 	
 		match dir_to_tile_pos:
 			Vector2.UP: dragged_sprite.rotation_degrees = -90
 			Vector2.DOWN: dragged_sprite.rotation_degrees = 90
 			Vector2.LEFT: dragged_sprite.rotation_degrees = 180
 			Vector2.RIGHT: dragged_sprite.rotation_degrees = 0
+
+		var valid_direction = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT].has(dir_to_tile_pos)
+		dragged_sprite.visible = valid_direction and !level.is_blocked(player_map_pos + dir_to_tile_pos)
 	else:
 		dragged_sprite.visible = false
 		position = position.lerp(lerp_to_pos, 20 * delta)
