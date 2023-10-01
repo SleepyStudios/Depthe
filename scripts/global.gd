@@ -20,4 +20,4 @@ func next_level():
 	old_scene.queue_free()
 
 func kill_player():
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
