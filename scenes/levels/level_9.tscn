@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbvexiibut2ps"]
+[gd_scene load_steps=8 format=3 uid="uid://cbvexiibut2ps"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_56dj5"]
 [ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_hfqb5"]
@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="4_7c81c"]
 [ext_resource type="PackedScene" uid="uid://bm2kcrs2c6apk" path="res://scenes/map_objects/switch.tscn" id="5_q15fk"]
 [ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="6_h54ck"]
+[ext_resource type="PackedScene" uid="uid://cwyv87p58ewlf" path="res://scenes/ui.tscn" id="7_c42q8"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Camera2D" parent="." instance=ExtResource("1_56dj5")]
+
+[node name="UI" parent="." instance=ExtResource("7_c42q8")]
 
 [node name="Level" type="TileMap" parent="."]
 tile_set = ExtResource("2_hfqb5")

@@ -22,7 +22,7 @@ func _on_player_moved(_new_pos: Vector2):
 		will_fire = false
 
 func _process(delta):
-	if arrow.visible:
+	if arrow.visible and not Global.is_game_paused():
 		arrow.position += Vector2.DOWN * 150.0 * delta
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

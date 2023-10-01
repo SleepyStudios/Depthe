@@ -45,7 +45,8 @@ func _input(event):
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
-			and event.is_pressed():
+			and event.is_pressed() \
+			and not Global.is_game_paused():
 		original_pos = position
 		grabbed = true
 
