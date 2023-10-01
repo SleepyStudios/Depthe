@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbvexiibut2ps"]
+[gd_scene load_steps=7 format=3 uid="uid://cbvexiibut2ps"]
 
 [ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_56dj5"]
 [ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_hfqb5"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="3_vc543"]
 [ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="4_7c81c"]
-[ext_resource type="PackedScene" uid="uid://bm2kcrs2c6apk" path="res://scenes/map_objects/switch.tscn" id="5_q15fk"]
 [ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="6_h54ck"]
 [ext_resource type="PackedScene" uid="uid://cwyv87p58ewlf" path="res://scenes/ui.tscn" id="7_c42q8"]
 
@@ -51,10 +50,6 @@ script = ExtResource("3_vc543")
 
 [node name="Player" parent="." instance=ExtResource("4_7c81c")]
 position = Vector2(56, 88)
-
-[node name="Switch" parent="." node_paths=PackedStringArray("toggleables") instance=ExtResource("5_q15fk")]
-position = Vector2(56, 72)
-toggleables = [NodePath("../ArrowTrap")]
 
 [node name="ArrowTrap" parent="." instance=ExtResource("6_h54ck")]
 position = Vector2(72, 56)
