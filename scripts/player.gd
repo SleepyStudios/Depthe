@@ -7,7 +7,8 @@ signal moved(new_pos: Vector2)
 @onready var level: Level = $"../Level"
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var blood: GPUParticles2D = $BloodParticles
-@onready var sfx: AudioStreamPlayer = $SFX
+@onready var footsteps1: AudioStreamPlayer = $Footsteps1
+@onready var footsteps2: AudioStreamPlayer = $Footsteps2
 
 var grabbed: bool
 var original_pos: Vector2
@@ -56,7 +57,10 @@ func _on_input_event(_viewport, event, _shape_idx):
 func set_new_pos(new_pos: Vector2):
 	lerp_to_pos = new_pos
 	moved.emit(lerp_to_pos)
-	sfx.play()
+	if randi()%2 == 0:
+		footsteps1.play()
+	else:
+		footsteps2.play()
 
 func _on_area_entered(area):
 	if level.is_same_tile(lerp_to_pos, area.get_parent().position) or area.is_in_group("arrows"):
