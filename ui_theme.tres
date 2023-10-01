@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dvdyvveigfte2"]
+
+[ext_resource type="FontFile" uid="uid://c07vl36ui0hc8" path="res://fonts/alagard.ttf" id="1_wtwir"]
+
+[resource]
+default_font = ExtResource("1_wtwir")

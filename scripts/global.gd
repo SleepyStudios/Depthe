@@ -5,7 +5,7 @@ var apples_collected = 0
 var time = 0
 var deaths = 0
 var moves = 0
-var max_level = 0
+var max_level = 1
 
 var player_is_dead: bool
 var go_to_next_level: bool
@@ -41,8 +41,9 @@ func next_level():
 
 	apples_collected += _get_player().apples
 	current_level += 1
-	
-	var new_scene = load("res://scenes/levels/level_%s.tscn" % [current_level])
+
+	var scene_name = "end" if current_level == max_level else "level_%s" % [current_level]
+	var new_scene = load("res://scenes/levels/%s.tscn" % [scene_name])
 	var old_scene = get_tree().root.get_node("Level")
 	old_scene.name = "_"
 
