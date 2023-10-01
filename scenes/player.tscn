@@ -164,7 +164,6 @@ orbit_velocity_max = 2.08167e-14
 angle_max = 360.0
 scale_min = 0.6
 color_ramp = SubResource("GradientTexture1D_3btgv")
-hue_variation_max = 0.1
 
 [node name="Player" type="Area2D"]
 position = Vector2(72, 72)
