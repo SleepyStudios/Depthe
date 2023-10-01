@@ -1,29 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://dh332iyrnbajp"]
+[gd_scene load_steps=12 format=3 uid="uid://dh332iyrnbajp"]
 
 [ext_resource type="Script" path="res://scripts/crumbling_tile.gd" id="1_0abgy"]
 [ext_resource type="Texture2D" uid="uid://c1n18l65gowr3" path="res://sprites/crumbling tile.png" id="2_cxwh7"]
+[ext_resource type="Texture2D" uid="uid://dod1pcjdtvbw7" path="res://sprites/crumbling_tile.png" id="3_6qckb"]
 [ext_resource type="AudioStream" uid="uid://bh8pthbygn4x3" path="res://sounds/crumbling.ogg" id="3_n25fn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3rcv"]
 atlas = ExtResource("2_cxwh7")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtv0o"]
-atlas = ExtResource("2_cxwh7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci43o"]
+atlas = ExtResource("3_6qckb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npjq4"]
+atlas = ExtResource("3_6qckb")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7mrd"]
+atlas = ExtResource("3_6qckb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oha04"]
+atlas = ExtResource("3_6qckb")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6xei"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_v3rcv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qtv0o")
+"texture": SubResource("AtlasTexture_ci43o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npjq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7mrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oha04")
 }],
 "loop": false,
 "name": &"default",
-"speed": 1.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
@@ -42,6 +64,6 @@ shape = SubResource("RectangleShape2D_rec3o")
 
 [node name="Crumbling" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_n25fn")
-volume_db = 10.0
+volume_db = -15.0
 
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

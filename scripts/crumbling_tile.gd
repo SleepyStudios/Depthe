@@ -11,6 +11,7 @@ func _on_area_2d_area_exited(_area):
 		return
 
 	crumbled = true
-	crumbling.play()
+	
 	sprite.play("default")
+	crumbling.play()
 	level.add_blocked_tile(position)

@@ -5,7 +5,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(_delta):
-	position = get_viewport().get_mouse_position() + Vector2(20, 20)
+	position = get_viewport().get_mouse_position() + Vector2(30, 25)
 
 func start_dragging():
 	set_frame_and_progress(0, 0)
