@@ -56,6 +56,7 @@ func is_blocked(pos: Vector2, can_unlock_doors = false) -> bool:
 	if blocked and requires_key:
 		if player.keys > 0 and can_unlock_doors:
 			player.keys -= 1
+			player.play_unlock_sfx()
 			blocked = false
 			set_cell(_get_collision_layer(), pos, -1)
 

@@ -49,3 +49,4 @@ shape = SubResource("RectangleShape2D_rec3o")
 
 [node name="Spikes" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gxmc8")
+volume_db = -4.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drs4n8vopgb30"]
+[gd_scene load_steps=7 format=3 uid="uid://drs4n8vopgb30"]
 
 [ext_resource type="Script" path="res://scripts/arrow_trap.gd" id="1_4ljri"]
 [ext_resource type="Texture2D" uid="uid://b1e5njylqsphv" path="res://sprites/arrow_trap.png" id="2_4agpy"]
 [ext_resource type="Texture2D" uid="uid://bx1ageexa62k" path="res://sprites/arrow.png" id="3_3r2op"]
+[ext_resource type="AudioStream" uid="uid://cp32f0psm8y2j" path="res://sounds/arrow_whoosh.ogg" id="4_3bkg1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rec3o"]
 size = Vector2(12, 12)
@@ -41,3 +42,7 @@ debug_color = Color(0.764706, 0.356863, 0.701961, 0.419608)
 target_position = Vector2(2.08165e-12, 300)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="ArrowSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3bkg1")
+volume_db = 5.0

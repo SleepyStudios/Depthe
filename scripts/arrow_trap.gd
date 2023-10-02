@@ -5,6 +5,7 @@ class_name ArrowTrap extends MapObject
 @onready var arrow = $Arrow
 @onready var player: Player = $"../Player"
 @onready var ray: RayCast2D = $RayCast2D
+@onready var arrow_sfx: AudioStreamPlayer = $ArrowSFX
 
 var will_fire = false
 var original_arrow_pos: Vector2
@@ -16,6 +17,7 @@ func _ready():
 
 func _on_player_moved(_new_pos: Vector2):
 	if will_fire and not arrow.visible:
+		arrow_sfx.play()
 		arrow.visible = true
 		will_fire = false
 

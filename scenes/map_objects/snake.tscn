@@ -14,7 +14,7 @@ z_index = 3
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("2_i66ow")
 
-[node name="Area2D" type="Area2D" parent="." groups=["hazards"]]
+[node name="Area2D" type="Area2D" parent="." groups=["hazards", "snakes"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_rec3o")

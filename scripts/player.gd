@@ -10,6 +10,10 @@ signal moved(new_pos: Vector2)
 @onready var footsteps1: AudioStreamPlayer = $Footsteps1
 @onready var footsteps2: AudioStreamPlayer = $Footsteps2
 @onready var ladder_sfx: AudioStreamPlayer = $LadderSFX
+@onready var unlock_sfx: AudioStreamPlayer = $UnlockSFX
+@onready var snake_sfx: AudioStreamPlayer = $SnakeSFX
+@onready var key_sfx: AudioStreamPlayer = $KeySFX
+@onready var apple_sfx: AudioStreamPlayer = $AppleSFX
 @onready var cursor: Cursor = $"/root/UI/Cursor"
 
 var grabbed: bool
@@ -75,14 +79,19 @@ func _on_area_entered(area):
 		if area.is_in_group("keys"):
 			keys += 1
 			area.get_parent().queue_free()
+			key_sfx.play()
 
 		if area.is_in_group("apples"):
 			apples += 1
 			area.get_parent().queue_free()
+			apple_sfx.play()
 
 		if area.is_in_group("hazards"):
 			if area.is_in_group("trap doors"):
 				anim.play("trap_door")
+			elif area.is_in_group("snakes"):
+				snake_sfx.play()
+				emit_blood()
 			else:
 				emit_blood()
 
@@ -96,3 +105,6 @@ func play_ladder_anim():
 
 func play_ladder_sfx():
 	ladder_sfx.play()
+	
+func play_unlock_sfx():
+	unlock_sfx.play()
