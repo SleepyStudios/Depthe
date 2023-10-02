@@ -26,8 +26,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -293.5
-offset_bottom = -114.5
+offset_top = -301.5
+offset_bottom = -122.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xsjgx")
@@ -38,19 +38,23 @@ text = "
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 custom_minimum_size = Vector2(2.08165e-12, 50.999)
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -129.5
-offset_bottom = -36.5
+offset_left = -377.0
+offset_top = -135.5
+offset_right = 377.0
+offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme = ExtResource("1_xsjgx")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "
-[center][wave amp=12.0 freq=6 connected=1]You found your way to freedom[/wave][/center]"
+[center][wave amp=12.0 freq=6 connected=1]As you narrowly escape the crypts, the distant glimmer of daylight beckons you forward[/wave][/center]"
 
 [node name="Stats" type="HFlowContainer" parent="CanvasLayer"]
 anchors_preset = 8
@@ -59,9 +63,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = -24.0
+offset_top = -14.0
 offset_right = 150.0
-offset_bottom = 240.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/v_separation = 16
