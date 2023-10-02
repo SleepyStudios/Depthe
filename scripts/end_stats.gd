@@ -4,6 +4,7 @@ extends Node2D
 @onready var apples: Label = $CanvasLayer/Stats/Apples/Label
 @onready var moves: Label = $CanvasLayer/Stats/Moves/Label
 @onready var deaths: Label = $CanvasLayer/Stats/Deaths/Label
+@onready var ui = $"/root/UI"
 
 func _ready():
   var minutes = Global.time / 60
@@ -12,3 +13,4 @@ func _ready():
   apples.text = str(Global.apples_collected) + "/8"
   moves.text = str(Global.moves)
   deaths.text = str(Global.deaths)
+  ui.on_new_scene_ready()

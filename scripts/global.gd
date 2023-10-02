@@ -56,9 +56,8 @@ func kill_player():
 		ui.begin_transition()
 		return
 
+	get_tree().change_scene_to_file("res://scenes/levels/level_%s.tscn" % [current_level])
 	player_is_dead = false
-
-	get_tree().reload_current_scene()
 
 func scene_transition_finished():
 	if player_is_dead:
