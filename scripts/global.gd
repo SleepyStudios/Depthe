@@ -47,14 +47,7 @@ func next_level():
 	current_level += 1
 
 	var scene_name = "end" if current_level == max_level else "level_%s" % [current_level]
-	var new_scene = load("res://scenes/levels/%s.tscn" % [scene_name])
-	var old_scene = get_tree().root.get_node("Level")
-	old_scene.name = "_"
-
-	var new_scene_instance = new_scene.instantiate()
-	get_tree().get_root().add_child(new_scene_instance)
-	get_tree().set_current_scene(new_scene_instance)
-	old_scene.queue_free()
+	get_tree().change_scene_to_file("res://scenes/levels/%s.tscn" % [scene_name])
 	ui.on_new_scene_ready()
 
 func kill_player():
