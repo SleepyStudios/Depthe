@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://gmu34rct2vq"]
+[gd_scene load_steps=7 format=3 uid="uid://c7v2may641pnn"]
 
-[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_cx1lw"]
+[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="1_cx1lw"]
 [ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_n71gu"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="3_ynk5q"]
 [ext_resource type="PackedScene" uid="uid://bm2kcrs2c6apk" path="res://scenes/map_objects/switch.tscn" id="4_5dv50"]
@@ -13,14 +13,14 @@
 tile_set = ExtResource("2_n71gu")
 format = 2
 layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(327684, 131072, 2, 196613, 131072, 2, 262149, 196608, 1, 262147, 196608, 1, 262148, 131072, 2, 327683, 196608, 1, 196612, 196608, 1, 131076, 196608, 1, 393220, 196608, 1)
+layer_0/tile_data = PackedInt32Array(327684, 131072, 2, 196613, 131072, 2, 262149, 196608, 1, 262147, 196608, 1, 327683, 196608, 1, 196612, 196608, 1, 327685, 131072, 2, 196611, 131072, 2, 262150, 196608, 1, 196610, 196608, 1)
 layer_1/name = ""
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(196612, 0, 1, 327684, 65536, 1, 196613, 0, 0)
+layer_1/tile_data = PackedInt32Array(262150, 0, 0, 196611, 0, 1)
 layer_2/name = ""
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -34,21 +34,21 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(131076, 0, 3)
+layer_3/tile_data = PackedInt32Array(196610, 0, 3)
 layer_4/name = "Collision"
 layer_4/enabled = true
 layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(393219, 262144, 1, 458755, 262144, 1, 458756, 262144, 1, 458757, 262144, 1, 393221, 262144, 1, 327686, 262144, 1, 65541, 262144, 1, 65539, 262144, 1, 327682, 262144, 1, 196610, 262144, 1, 131075, 262144, 1, 131077, 262144, 1, 131078, 262144, 1, 196614, 262144, 1, 262150, 262144, 1, 262146, 262144, 1, 131076, 131072, 0, 327685, 262144, 1, 196611, 262144, 1, 65540, 0, 2, 393218, 262144, 1)
+layer_4/tile_data = PackedInt32Array(262148, 262144, 1, 393221, 262144, 1, 393219, 262144, 1, 393218, 262144, 1, 327682, 262144, 1, 262146, 262144, 1, 131076, 262144, 1, 131077, 262144, 1, 131078, 262144, 1, 196614, 262144, 1, 196615, 262144, 1, 262151, 262144, 1, 327687, 262144, 1, 327686, 262144, 1, 393222, 262144, 1, 131075, 262144, 1, 131074, 0, 2, 131073, 262144, 1, 196609, 262144, 1, 262145, 262144, 1, 196610, 131072, 0, 393220, 262144, 1)
 script = ExtResource("3_ynk5q")
 
 [node name="Player" parent="." instance=ExtResource("5_qphxi")]
-position = Vector2(56, 72)
+position = Vector2(72, 88)
 
 [node name="Switch" parent="." node_paths=PackedStringArray("toggleables") instance=ExtResource("4_5dv50")]
-position = Vector2(72, 72)
+position = Vector2(56, 88)
 toggleables = [NodePath("../TrapDoor")]
 
 [node name="TrapDoor" parent="." instance=ExtResource("5_t4o6u")]
