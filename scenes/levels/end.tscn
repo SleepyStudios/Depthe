@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/end_stats.gd" id="1_mwl8i"]
 [ext_resource type="Theme" uid="uid://dvdyvveigfte2" path="res://ui_theme.tres" id="1_xsjgx"]
-[ext_resource type="Texture2D" uid="uid://bpibauyv6r53h" path="res://sprites/apple.png" id="2_f3clk"]
+[ext_resource type="Texture2D" uid="uid://cayxp2wemwitc" path="res://sprites/apple_stat.png" id="3_3qbm0"]
 [ext_resource type="Texture2D" uid="uid://cp1bchghkqxix" path="res://sprites/hourglass.png" id="3_svtat"]
 [ext_resource type="Texture2D" uid="uid://dietg83j7s4t8" path="res://sprites/moves.png" id="5_hn3gm"]
 [ext_resource type="Texture2D" uid="uid://dhv2gq40wrw0g" path="res://sprites/skull.png" id="6_q0tp4"]
@@ -26,12 +26,12 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -256.0
-offset_bottom = -98.0
+offset_top = -293.5
+offset_bottom = -114.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xsjgx")
-theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
 text = "
 [center][wave amp=30.0 freq=6 connected=1]Depthe[/wave][/center]"
@@ -42,8 +42,8 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -137.0
-offset_bottom = -44.0
+offset_top = -129.5
+offset_bottom = -36.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xsjgx")
@@ -59,9 +59,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -150.0
-offset_top = -32.0
+offset_top = -24.0
 offset_right = 150.0
-offset_bottom = 232.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/v_separation = 16
@@ -75,7 +75,7 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Stats/Apples"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-texture = ExtResource("2_f3clk")
+texture = ExtResource("3_3qbm0")
 expand_mode = 2
 stretch_mode = 4
 
