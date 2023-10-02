@@ -18,7 +18,7 @@ func _ready():
 	arrow_hitbox.remove_from_group("hazards")
 
 func _on_player_moved(_new_pos: Vector2):
-	if will_fire and not arrow.visible:
+	if will_fire and not arrow.visible and not Global.go_to_next_level:
 		arrow_sfx.play()
 		arrow.visible = true
 		will_fire = false
