@@ -9,6 +9,7 @@ signal moved(new_pos: Vector2)
 @onready var blood: GPUParticles2D = $BloodParticles
 @onready var footsteps1: AudioStreamPlayer = $Footsteps1
 @onready var footsteps2: AudioStreamPlayer = $Footsteps2
+@onready var ladder_sfx: AudioStreamPlayer = $LadderSFX
 @onready var cursor: Cursor = $"/root/UI/Cursor"
 
 var grabbed: bool
@@ -92,3 +93,6 @@ func emit_blood():
 
 func play_ladder_anim():
 	anim.play("up_ladder")
+
+func play_ladder_sfx():
+	ladder_sfx.play()

@@ -163,6 +163,20 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("2_p7005"), ExtResource("4_682ns")]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_ladder_sfx"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m8ja3"]
 _data = {
@@ -232,6 +246,9 @@ trail_lifetime = 0.4
 stream = ExtResource("5_3e5o6")
 
 [node name="Footsteps2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n86be")
+
+[node name="LadderSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n86be")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
