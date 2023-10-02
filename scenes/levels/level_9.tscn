@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://fqf5wa42ypte"]
 
-[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="1_7npy7"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="2_rsjhb"]
-[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="3_oy8bd"]
-[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="4_11yln"]
-[ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="5_s4yk3"]
-[ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="6_8ofma"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_56dj5"]
+[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_hfqb5"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="3_vc543"]
+[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="4_7c81c"]
+[ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="6_2m2ot"]
+[ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="6_h54ck"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Level" type="TileMap" parent="."]
-tile_set = ExtResource("1_7npy7")
+tile_set = ExtResource("2_hfqb5")
 format = 2
 layer_0/name = "Ground"
 layer_0/tile_data = PackedInt32Array(327684, 131072, 2, 262149, 131072, 1, 262147, 131072, 1, 262148, 196608, 1, 196612, 196608, 1, 327685, 196608, 1, 327683, 131072, 2)
@@ -42,19 +42,20 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(393221, 262144, 1, 458757, 262144, 1, 458756, 262144, 1, 458755, 262144, 1, 393219, 262144, 1, 327682, 262144, 1, 262146, 262144, 1, 196610, 262144, 1, 131074, 262144, 1, 131075, 262144, 1, 131077, 262144, 1, 196613, 262144, 1, 196614, 262144, 1, 131078, 262144, 1, 262150, 262144, 1, 327686, 262144, 1, 393222, 262144, 1, 131076, 0, 2, 196611, 262144, 1, 393218, 262144, 1)
-script = ExtResource("2_rsjhb")
+script = ExtResource("3_vc543")
 
-[node name="Player" parent="." instance=ExtResource("3_oy8bd")]
+[node name="Player" parent="." instance=ExtResource("4_7c81c")]
 position = Vector2(56, 88)
 
-[node name="Camera2D" parent="." instance=ExtResource("4_11yln")]
+[node name="Camera2D" parent="." instance=ExtResource("1_56dj5")]
+offset = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="Spikes" parent="." instance=ExtResource("5_s4yk3")]
+[node name="Spikes" parent="." instance=ExtResource("6_2m2ot")]
 position = Vector2(72, 72)
 
-[node name="ArrowTrap" parent="." instance=ExtResource("6_8ofma")]
+[node name="ArrowTrap" parent="." instance=ExtResource("6_h54ck")]
 position = Vector2(72, 104)
 rotation = 3.14159
 
-[node name="ArrowTrap2" parent="." instance=ExtResource("6_8ofma")]
+[node name="ArrowTrap2" parent="." instance=ExtResource("6_h54ck")]
 position = Vector2(88, 56)
