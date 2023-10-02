@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/level.gd" id="2_844in"]
 [ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="3_pkcb3"]
 [ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="4_uejwh"]
-[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="5_wfxx2"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="5_wfxx2"]
 
 [node name="Level" type="Node2D"]
 

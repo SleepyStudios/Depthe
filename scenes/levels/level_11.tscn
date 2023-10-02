@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="1_68hxa"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="2_hhw0c"]
 [ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="3_lm17p"]
-[ext_resource type="PackedScene" path="res://scenes/camera.tscn" id="4_adgrn"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="4_adgrn"]
 [ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="5_ht3o6"]
 [ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="6_ks4bx"]
 
@@ -41,7 +41,7 @@ layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(393221, 262144, 1, 458757, 262144, 1, 458756, 262144, 1, 458755, 262144, 1, 393219, 262144, 1, 327682, 262144, 1, 262146, 262144, 1, 196610, 262144, 1, 131074, 262144, 1, 131075, 262144, 1, 131077, 262144, 1, 196613, 262144, 1, 196614, 262144, 1, 131078, 262144, 1, 262150, 262144, 1, 327686, 262144, 1, 393222, 262144, 1, 131076, 0, 2, 196611, 262144, 1, 393218, 262144, 1)
+layer_4/tile_data = PackedInt32Array(393221, 262144, 1, 458757, 262144, 1, 458756, 262144, 1, 458755, 262144, 1, 393219, 262144, 1, 327682, 262144, 1, 262146, 262144, 1, 196610, 262144, 1, 131074, 262144, 1, 131075, 262144, 1, 131077, 262144, 1, 196613, 262144, 1, 196614, 262144, 1, 131078, 262144, 1, 262150, 262144, 1, 327686, 262144, 1, 393222, 262144, 1, 131076, 0, 2, 196611, 262144, 1, 393218, 262144, 1, 393220, 262144, 1)
 script = ExtResource("2_hhw0c")
 
 [node name="Player" parent="." instance=ExtResource("3_lm17p")]
