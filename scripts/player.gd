@@ -14,6 +14,7 @@ signal moved(new_pos: Vector2)
 @onready var snake_sfx: AudioStreamPlayer = $SnakeSFX
 @onready var key_sfx: AudioStreamPlayer = $KeySFX
 @onready var apple_sfx: AudioStreamPlayer = $AppleSFX
+@onready var ui = $"/root/UI"
 @onready var cursor: Cursor = $"/root/UI/Cursor"
 
 var grabbed: bool
@@ -27,6 +28,7 @@ func _ready():
 	original_pos = position
 	lerp_to_pos = position
 	dragged_sprite.visible = false
+	ui.on_new_scene_ready()
 	
 func _process(delta):
 	if grabbed:
