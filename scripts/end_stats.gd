@@ -9,6 +9,6 @@ func _ready():
   var minutes = Global.time / 60
   var seconds = fmod(Global.time, 60)
   time.text = "%02d:%02d" % [minutes, seconds]
-  apples.text = str(Global.apples_collected) + "/5"
+  apples.text = str(Global.apples_collected) + "/7"
   moves.text = str(Global.moves)
   deaths.text = str(Global.deaths)

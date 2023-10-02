@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0fiq6tv27wsb"]
 
-[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_56dj5"]
-[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_hfqb5"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="3_vc543"]
-[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="4_7c81c"]
-[ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="6_2m2ot"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_cx1lw"]
+[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_n71gu"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="3_ynk5q"]
+[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="5_qphxi"]
+[ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="6_k4gp1"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Level" type="TileMap" parent="."]
-tile_set = ExtResource("2_hfqb5")
+tile_set = ExtResource("2_n71gu")
 format = 2
 layer_0/name = "Ground"
 layer_0/tile_data = PackedInt32Array(393220, 131072, 2, 327684, 131072, 2, 262148, 131072, 1, 196612, 196608, 1, 196613, 196608, 1, 262149, 196608, 1, 327685, 196608, 1, 262150, 131072, 2, 262147, 196608, 1, 196611, 196608, 1, 327683, 131072, 2, 262146, 196608, 1)
@@ -41,12 +41,12 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(393219, 262144, 1, 458755, 262144, 1, 458756, 262144, 1, 458757, 262144, 1, 393221, 262144, 1, 393222, 262144, 1, 327686, 262144, 1, 327687, 262144, 1, 327682, 262144, 1, 262145, 262144, 1, 196609, 262144, 1, 196610, 262144, 1, 131074, 262144, 1, 131075, 262144, 1, 131076, 262144, 1, 131078, 262144, 1, 196614, 262144, 1, 196615, 262144, 1, 262151, 262144, 1, 196613, 131072, 0, 393218, 262144, 1, 327681, 262144, 1)
-script = ExtResource("3_vc543")
+script = ExtResource("3_ynk5q")
 
-[node name="Spikes" parent="." instance=ExtResource("6_2m2ot")]
+[node name="Spikes" parent="." instance=ExtResource("6_k4gp1")]
 position = Vector2(88, 88)
 
-[node name="Player" parent="." instance=ExtResource("4_7c81c")]
+[node name="Player" parent="." instance=ExtResource("5_qphxi")]
 
-[node name="Camera2D" parent="." instance=ExtResource("1_56dj5")]
+[node name="Camera2D" parent="." instance=ExtResource("1_cx1lw")]
 position = Vector2(72, 80)
