@@ -23,7 +23,7 @@ func _replace_tiles_with_scenes():
 
 func _is_diagonal(original_pos: Vector2, new_pos: Vector2) -> bool:
 	var dir = original_pos.direction_to(new_pos).abs()
-	return dir.x == dir.y
+	return not [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT].has(dir)
 
 func is_pointing_diagonally(original_pos: Vector2, new_pos: Vector2) -> bool:
 	return _is_diagonal(local_to_map(original_pos), local_to_map(new_pos))
