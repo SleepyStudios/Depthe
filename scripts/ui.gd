@@ -8,7 +8,8 @@ var transitioning: bool
 var tutorial_dismissed: bool
 
 func _get_player() -> Player:
-	return get_node("../Level/Player")
+	var path = "../Level/Player"
+	return get_node(path) if has_node(path) else null
 
 func _ready():
 	_get_player().moved.connect(_on_player_moved)

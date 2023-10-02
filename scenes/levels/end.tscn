@@ -51,28 +51,6 @@ grow_vertical = 2
 theme_override_constants/v_separation = 16
 alignment = 1
 
-[node name="Time" type="HBoxContainer" parent="CanvasLayer/Stats"]
-custom_minimum_size = Vector2(250, 50)
-layout_mode = 2
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Stats/Time"]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-texture = ExtResource("3_svtat")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="CanvasLayer/Stats/Time"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme = ExtResource("1_xsjgx")
-theme_override_font_sizes/font_size = 48
-text = "0:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Apples" type="HBoxContainer" parent="CanvasLayer/Stats"]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
@@ -95,25 +73,25 @@ text = "0/3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Moves" type="HBoxContainer" parent="CanvasLayer/Stats"]
+[node name="Time" type="HBoxContainer" parent="CanvasLayer/Stats"]
 custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Stats/Moves"]
-custom_minimum_size = Vector2(60, 2.08165e-12)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Stats/Time"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-texture = ExtResource("5_hn3gm")
+texture = ExtResource("3_svtat")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="CanvasLayer/Stats/Moves"]
+[node name="Label" type="Label" parent="CanvasLayer/Stats/Time"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme = ExtResource("1_xsjgx")
 theme_override_font_sizes/font_size = 48
-text = "300"
+text = "0:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -136,5 +114,27 @@ size_flags_vertical = 8
 theme = ExtResource("1_xsjgx")
 theme_override_font_sizes/font_size = 48
 text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Moves" type="HBoxContainer" parent="CanvasLayer/Stats"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Stats/Moves"]
+custom_minimum_size = Vector2(60, 2.08165e-12)
+layout_mode = 2
+texture = ExtResource("5_hn3gm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Stats/Moves"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("1_xsjgx")
+theme_override_font_sizes/font_size = 48
+text = "300"
 horizontal_alignment = 1
 vertical_alignment = 1
