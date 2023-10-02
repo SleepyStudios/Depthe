@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg435foib2qnh"]
+
+[ext_resource type="Script" path="res://scripts/random_ambience.gd" id="1_0oaid"]
+[ext_resource type="AudioStream" uid="uid://4bw365wv2i74" path="res://sounds/ambience/ghostvoices.wav" id="2_bfuuv"]
+[ext_resource type="AudioStream" uid="uid://ss0rsw0we5f4" path="res://sounds/ambience/ghostvoices_short.wav" id="3_tjy5r"]
+[ext_resource type="AudioStream" uid="uid://dged5pfgqtyre" path="res://sounds/ambience/gong.wav" id="4_eib8w"]
+[ext_resource type="AudioStream" uid="uid://ckjlupyi5icot" path="res://sounds/ambience/harp.wav" id="5_mqmn8"]
+[ext_resource type="AudioStream" uid="uid://bk7j6vnjreju8" path="res://sounds/ambience/pluck.wav" id="6_4gm16"]
+[ext_resource type="AudioStream" uid="uid://b7rej3h55nwmf" path="res://sounds/ambience/pluckx2.wav" id="7_5w7fu"]
+
+[node name="RandomAmbience" type="Node2D"]
+script = ExtResource("1_0oaid")
+
+[node name="GhostVoices" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_bfuuv")
+volume_db = -30.0
+
+[node name="GhostVoicesShort" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tjy5r")
+volume_db = -30.0
+
+[node name="Gong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_eib8w")
+volume_db = -30.0
+
+[node name="Harp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mqmn8")
+volume_db = -30.0
+
+[node name="Pluck" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4gm16")
+volume_db = -30.0
+
+[node name="PluckTwice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_5w7fu")
+volume_db = -30.0
