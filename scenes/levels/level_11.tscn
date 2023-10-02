@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7phn7f2e2oju"]
 
-[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="1_j6132"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="2_sv1iy"]
-[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="3_ryw10"]
-[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="4_fav7u"]
-[ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="5_4663s"]
+[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="1_a6mwl"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="2_4yc8s"]
+[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="3_lqbsl"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="4_qi8be"]
+[ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="5_kw8xf"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Level" type="TileMap" parent="."]
-tile_set = ExtResource("1_j6132")
+tile_set = ExtResource("1_a6mwl")
 format = 2
 layer_0/name = "Ground"
 layer_0/tile_data = PackedInt32Array(262148, 131072, 2, 262149, 131072, 2, 262147, 131072, 2, 196612, 131072, 2, 327684, 131072, 2, 327685, 131072, 2, 393221, 131072, 2, 196611, 131072, 2, 131075, 131072, 2)
@@ -41,21 +41,21 @@ layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array(196611, 131072, 0, 65539, 0, 2, 458756, 262144, 1, 458757, 262144, 1, 458758, 262144, 1, 393222, 262144, 1, 327686, 262144, 1, 262150, 262144, 1, 196614, 262144, 1, 131078, 262144, 1, 131077, 262144, 1, 131076, 262144, 1, 65540, 262144, 1, 65538, 262144, 1, 131074, 262144, 1, 196610, 262144, 1, 262146, 262144, 1, 327682, 262144, 1, 393218, 262144, 1, 393219, 262144, 1, 458755, 262144, 1)
-script = ExtResource("2_sv1iy")
+script = ExtResource("2_4yc8s")
 
-[node name="Player" parent="." instance=ExtResource("3_ryw10")]
+[node name="Player" parent="." instance=ExtResource("3_lqbsl")]
 
-[node name="Camera2D" parent="." instance=ExtResource("4_fav7u")]
+[node name="Camera2D" parent="." instance=ExtResource("4_qi8be")]
 offset = Vector2(2.08165e-12, -4)
 
-[node name="ArrowTrap" parent="." instance=ExtResource("5_4663s")]
+[node name="ArrowTrap" parent="." instance=ExtResource("5_kw8xf")]
 position = Vector2(56, 88)
 rotation = 4.71239
 
-[node name="ArrowTrap2" parent="." instance=ExtResource("5_4663s")]
+[node name="ArrowTrap2" parent="." instance=ExtResource("5_kw8xf")]
 position = Vector2(88, 56)
 rotation = 1.5708
 
-[node name="ArrowTrap3" parent="." instance=ExtResource("5_4663s")]
+[node name="ArrowTrap3" parent="." instance=ExtResource("5_kw8xf")]
 position = Vector2(72, 104)
 rotation = 3.14159
