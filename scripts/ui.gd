@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var scene_anim: AnimationPlayer = $SceneTransitionAnimationPlayer
 @onready var tutorial: Label = $Tutorial
 @onready var tutorial_anim: AnimationPlayer = $TutorialAnimationPlayer
+@onready var cursor: Cursor = $Cursor
 
 var transitioning: bool
 var tutorial_dismissed: bool
@@ -22,6 +23,9 @@ func _unhandled_input(event):
 		restarting = true
 		get_tree().call_deferred("reload_current_scene")
 		restarting = false
+
+	if event.is_action_pressed("fullscreen") and not OS.has_feature("web"):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
