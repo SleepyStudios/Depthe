@@ -12,11 +12,6 @@ func _get_player() -> Player:
 	var path = "../Level/Player"
 	return get_node(path) if has_node(path) else null
 
-func _ready():
-	_get_player().moved.connect(_on_player_moved)
-	tutorial.text = "Click and drag the player to move"
-	tutorial_anim.play("fade_in")
-
 func _on_player_moved(_new_pos):
 	if Global.current_level == 1 and not tutorial_dismissed:
 		tutorial_anim.play_backwards("fade_in")
@@ -42,6 +37,10 @@ func _finish_transition():
 func on_new_scene_ready():
 	restarting = false
 	scene_anim.play("scale_down")
+
+	if Global.current_level == 1:
+		tutorial.text = "Click and drag the player to move"
+		tutorial_anim.play("fade_in")
 
 	if _get_player():
 		_get_player().moved.connect(_on_player_moved)

@@ -1,6 +1,6 @@
 extends Node
 
-var current_level = 1
+var current_level = 0
 var apples_collected = 0
 var time = 0
 var deaths = 0
@@ -26,7 +26,8 @@ func _ready():
 		file_name = dir.get_next()
 
 func _get_player() -> Player:
-	return get_node("../Level/Player")
+	var path = "../Level/Player"
+	return get_node(path) if has_node(path) else null
 
 func _process(delta):
 	if not is_game_paused():
@@ -40,7 +41,9 @@ func next_level():
 
 	go_to_next_level = false
 
-	apples_collected += _get_player().apples
+	if _get_player():
+		apples_collected += _get_player().apples
+
 	current_level += 1
 
 	var scene_name = "end" if current_level == max_level else "level_%s" % [current_level]
