@@ -44,6 +44,8 @@ texture = ExtResource("1_4uq36")
 1:2/0/custom_data_2 = {
 "horizontal": true
 }
+1:3/0 = 0
+2:3/0 = 0
 
 [resource]
 custom_data_layer_0/name = "blocked"

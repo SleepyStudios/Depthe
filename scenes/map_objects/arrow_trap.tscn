@@ -9,7 +9,7 @@
 size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngimu"]
-size = Vector2(3, 14)
+size = Vector2(3, 8)
 
 [node name="ArrowTrap" type="Node2D"]
 script = ExtResource("1_4ljri")
@@ -31,15 +31,15 @@ position = Vector2(0.5, 2.08165e-12)
 texture = ExtResource("3_3r2op")
 
 [node name="Area2D" type="Area2D" parent="Arrow/Sprite2D" groups=["arrows", "hazards"]]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow/Sprite2D/Area2D"]
-position = Vector2(-0.5, -2.08165e-12)
+position = Vector2(-0.5, -3)
 shape = SubResource("RectangleShape2D_ngimu")
 debug_color = Color(0.764706, 0.356863, 0.701961, 0.419608)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(2.08165e-12, 300)
+collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 

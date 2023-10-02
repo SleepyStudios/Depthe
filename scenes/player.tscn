@@ -215,7 +215,7 @@ color_ramp = SubResource("GradientTexture1D_3btgv")
 
 [node name="Player" type="Area2D"]
 position = Vector2(72, 72)
-collision_mask = 3
+collision_layer = 3
 script = ExtResource("1_y45kh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
