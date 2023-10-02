@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg435foib2qnh"]
+[gd_scene load_steps=11 format=3 uid="uid://bg435foib2qnh"]
 
 [ext_resource type="AudioStream" uid="uid://dle6lopan86rk" path="res://sounds/ambience/bassloop.ogg" id="1_v7b3d"]
+[ext_resource type="Script" path="res://scripts/drip.gd" id="2_0ckwr"]
 [ext_resource type="Script" path="res://scripts/ambience.gd" id="2_c2hog"]
+[ext_resource type="AudioStream" uid="uid://boxptbl3wjhe6" path="res://sounds/ambience/drip.ogg" id="2_untuf"]
 [ext_resource type="AudioStream" uid="uid://ckmmky4c7lqwk" path="res://sounds/ambience/ghostvoices.ogg" id="2_xba3e"]
 [ext_resource type="AudioStream" uid="uid://di1e1qhay7sfr" path="res://sounds/ambience/ghostvoices_short.ogg" id="3_860q5"]
 [ext_resource type="AudioStream" uid="uid://6yuij261lao5" path="res://sounds/ambience/gong.ogg" id="4_iu1re"]
@@ -15,6 +17,10 @@
 stream = ExtResource("1_v7b3d")
 volume_db = -8.0
 autoplay = true
+
+[node name="Drip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_untuf")
+script = ExtResource("2_0ckwr")
 
 [node name="RandomAmbience" type="Node2D" parent="."]
 script = ExtResource("2_c2hog")
