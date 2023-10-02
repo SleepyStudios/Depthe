@@ -6,6 +6,7 @@ extends CanvasLayer
 
 var transitioning: bool
 var tutorial_dismissed: bool
+var restarting: bool
 
 func _get_player() -> Player:
 	var path = "../Level/Player"
@@ -22,8 +23,13 @@ func _on_player_moved(_new_pos):
 		tutorial_dismissed = true
 
 func _unhandled_input(event):
-	if event.is_action_pressed("restart"):
-		Global.kill_player()
+	if event.is_action_pressed("restart") and not restarting:
+		restarting = true
+		get_tree().call_deferred("reload_current_scene")
+		restarting = false
+
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
 
 func begin_transition():
 	transitioning = true
@@ -34,6 +40,7 @@ func _finish_transition():
 		Global.scene_transition_finished()
 
 func on_new_scene_ready():
+	restarting = false
 	scene_anim.play("scale_down")
 
 	if _get_player():
