@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c883xmrkudb7w"]
+[gd_scene load_steps=17 format=3 uid="uid://c883xmrkudb7w"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_y45kh"]
 [ext_resource type="Texture2D" uid="uid://d1dh54pg55tep" path="res://sprites/player.png" id="2_p7005"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bglryswgjxaab" path="res://sprites/blood.png" id="4_ejfwu"]
 [ext_resource type="AudioStream" uid="uid://bq41smikjrjli" path="res://sounds/footsteps_1.ogg" id="5_3e5o6"]
 [ext_resource type="AudioStream" uid="uid://s0n0evmki0o7" path="res://sounds/footsteps_2.ogg" id="6_n86be"]
+[ext_resource type="AudioStream" uid="uid://bsvsoapa6e6md" path="res://sounds/footsteps_1_quieter.ogg" id="8_xyvan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xw7ka"]
 size = Vector2(16, 16)
@@ -247,12 +248,15 @@ trail_lifetime = 0.4
 
 [node name="Footsteps1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3e5o6")
+volume_db = -5.0
 
 [node name="Footsteps2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n86be")
+volume_db = -5.0
 
 [node name="LadderSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_3e5o6")
+stream = ExtResource("8_xyvan")
+volume_db = -13.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
