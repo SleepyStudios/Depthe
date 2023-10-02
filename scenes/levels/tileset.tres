@@ -12,6 +12,7 @@ texture = ExtResource("1_4uq36")
 1:0/0 = 0
 1:0/0/custom_data_0 = true
 2:0/0 = 0
+2:0/0/z_index = 5
 2:0/0/custom_data_0 = true
 2:0/0/custom_data_3 = true
 3:0/animation_columns = 2

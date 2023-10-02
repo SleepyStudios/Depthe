@@ -27,12 +27,16 @@ func _unhandled_input(event):
 		get_tree().quit()
 
 func begin_transition():
+	if transitioning:
+		return
+
 	transitioning = true
 	scene_anim.play_backwards("scale_down")
 
 func _finish_transition():
 	if transitioning:
 		Global.scene_transition_finished()
+		transitioning = false
 
 func on_new_scene_ready():
 	restarting = false
