@@ -25,7 +25,7 @@ func _process(delta):
 	if ray.is_colliding() and not arrow.visible and not will_fire:
 		will_fire = true
 
-	if arrow.visible and not Global.is_game_paused():
+	if arrow.visible and not Global.player_is_dead:
 		arrow.position += Vector2.DOWN * 150.0 * delta
 		var map_pos = level.local_to_map(arrow.global_position)
 		if level.is_blocked(map_pos) and not level.is_water(map_pos):
