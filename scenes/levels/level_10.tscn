@@ -1,26 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://4gd04r0gilwr"]
+[gd_scene load_steps=7 format=3 uid="uid://fqf5wa42ypte"]
 
-[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="1_a6mwl"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="2_4yc8s"]
-[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="3_lqbsl"]
-[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="4_qi8be"]
-[ext_resource type="PackedScene" uid="uid://bm2kcrs2c6apk" path="res://scenes/map_objects/switch.tscn" id="5_q5o0f"]
-[ext_resource type="PackedScene" uid="uid://wtjhw1jtwatl" path="res://scenes/map_objects/trap_door.tscn" id="6_66fd4"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="1_56dj5"]
+[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="2_hfqb5"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="3_vc543"]
+[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="4_7c81c"]
+[ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="6_2m2ot"]
+[ext_resource type="PackedScene" uid="uid://drs4n8vopgb30" path="res://scenes/map_objects/arrow_trap.tscn" id="6_h54ck"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Level" type="TileMap" parent="."]
-tile_set = ExtResource("1_a6mwl")
+tile_set = ExtResource("2_hfqb5")
 format = 2
 layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(327684, 131072, 2, 262147, 196608, 1, 393219, 131072, 2, 393220, 131072, 2, 393221, 131072, 2, 393218, 196608, 1, 196613, 131072, 2, 196612, 196608, 1, 196611, 196608, 1, 393222, 131072, 2)
+layer_0/tile_data = PackedInt32Array(327684, 131072, 2, 262149, 131072, 1, 262147, 131072, 1, 262148, 196608, 1, 196612, 196608, 1, 327685, 196608, 1, 327683, 131072, 2)
 layer_1/name = ""
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(196611, 65536, 2, 196612, 0, 0, 393221, 65536, 2)
+layer_1/tile_data = PackedInt32Array()
 layer_2/name = ""
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -34,25 +34,28 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(393218, 0, 3)
+layer_3/tile_data = PackedInt32Array(196612, 0, 3)
 layer_4/name = "Collision"
 layer_4/enabled = true
 layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(327684, 131072, 0, 327682, 0, 2, 327683, 262144, 1, 458754, 262144, 1, 458755, 262144, 1, 458756, 262144, 1, 458757, 262144, 1, 458758, 262144, 1, 327686, 262144, 1, 327685, 262144, 1, 262149, 262144, 1, 262150, 262144, 1, 196614, 262144, 1, 131078, 262144, 1, 131077, 262144, 1, 131076, 262144, 1, 131075, 262144, 1, 131074, 262144, 1, 196610, 262144, 1, 262146, 262144, 1, 458753, 262144, 1, 393217, 262144, 1, 327681, 262144, 1, 458759, 262144, 1, 393223, 262144, 1, 327687, 262144, 1)
-script = ExtResource("2_4yc8s")
+layer_4/tile_data = PackedInt32Array(393221, 262144, 1, 458757, 262144, 1, 458756, 262144, 1, 458755, 262144, 1, 393219, 262144, 1, 327682, 262144, 1, 262146, 262144, 1, 196610, 262144, 1, 131074, 262144, 1, 131075, 262144, 1, 131077, 262144, 1, 196613, 262144, 1, 196614, 262144, 1, 131078, 262144, 1, 262150, 262144, 1, 327686, 262144, 1, 393222, 262144, 1, 131076, 0, 2, 196611, 262144, 1, 393218, 262144, 1)
+script = ExtResource("3_vc543")
 
-[node name="Player" parent="." instance=ExtResource("3_lqbsl")]
-position = Vector2(56, 72)
+[node name="Player" parent="." instance=ExtResource("4_7c81c")]
+position = Vector2(56, 88)
 
-[node name="Camera2D" parent="." instance=ExtResource("4_qi8be")]
-offset = Vector2(2.08165e-12, 8)
+[node name="Camera2D" parent="." instance=ExtResource("1_56dj5")]
+offset = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="Switch2" parent="." node_paths=PackedStringArray("toggleables") instance=ExtResource("5_q5o0f")]
-position = Vector2(72, 103)
-toggleables = [NodePath("../TrapDoor")]
-
-[node name="TrapDoor" parent="." instance=ExtResource("6_66fd4")]
+[node name="Spikes" parent="." instance=ExtResource("6_2m2ot")]
 position = Vector2(72, 72)
+
+[node name="ArrowTrap" parent="." instance=ExtResource("6_h54ck")]
+position = Vector2(72, 104)
+rotation = 3.14159
+
+[node name="ArrowTrap2" parent="." instance=ExtResource("6_h54ck")]
+position = Vector2(88, 56)
