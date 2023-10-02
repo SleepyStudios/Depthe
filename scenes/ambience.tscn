@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bg435foib2qnh"]
+
+[ext_resource type="AudioStream" uid="uid://dle6lopan86rk" path="res://sounds/ambience/bassloop.ogg" id="1_v7b3d"]
+[ext_resource type="Script" path="res://scripts/ambience.gd" id="2_c2hog"]
+[ext_resource type="AudioStream" uid="uid://ckmmky4c7lqwk" path="res://sounds/ambience/ghostvoices.ogg" id="2_xba3e"]
+[ext_resource type="AudioStream" uid="uid://di1e1qhay7sfr" path="res://sounds/ambience/ghostvoices_short.ogg" id="3_860q5"]
+[ext_resource type="AudioStream" uid="uid://6yuij261lao5" path="res://sounds/ambience/gong.ogg" id="4_iu1re"]
+[ext_resource type="AudioStream" uid="uid://bvwfvsjpiuayy" path="res://sounds/ambience/pluck.ogg" id="6_w3shp"]
+[ext_resource type="AudioStream" uid="uid://bge8q71ka3gys" path="res://sounds/ambience/pluckx2.ogg" id="7_rvdvv"]
+[ext_resource type="AudioStream" uid="uid://c3tq60qaenhsc" path="res://sounds/ambience/warmrain.ogg" id="8_m2ihl"]
+
+[node name="Ambience" type="Node2D"]
+
+[node name="BassLoop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_v7b3d")
+volume_db = -8.0
+autoplay = true
+
+[node name="RandomAmbience" type="Node2D" parent="."]
+script = ExtResource("2_c2hog")
+
+[node name="GhostVoices" type="AudioStreamPlayer2D" parent="RandomAmbience"]
+stream = ExtResource("2_xba3e")
+
+[node name="GhostVoicesShort" type="AudioStreamPlayer2D" parent="RandomAmbience"]
+stream = ExtResource("3_860q5")
+
+[node name="Gong" type="AudioStreamPlayer2D" parent="RandomAmbience"]
+stream = ExtResource("4_iu1re")
+
+[node name="Pluck" type="AudioStreamPlayer2D" parent="RandomAmbience"]
+stream = ExtResource("6_w3shp")
+
+[node name="PluckTwice" type="AudioStreamPlayer2D" parent="RandomAmbience"]
+stream = ExtResource("7_rvdvv")
+
+[node name="WarmRain" type="AudioStreamPlayer2D" parent="RandomAmbience"]
+stream = ExtResource("8_m2ihl")

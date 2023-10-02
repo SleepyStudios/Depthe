@@ -45,4 +45,4 @@ collide_with_bodies = false
 
 [node name="ArrowSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3bkg1")
-volume_db = 5.0
+volume_db = 15.0

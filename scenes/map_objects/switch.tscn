@@ -42,6 +42,5 @@ shape = SubResource("RectangleShape2D_rec3o")
 
 [node name="Lever" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_og73b")
-volume_db = -5.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

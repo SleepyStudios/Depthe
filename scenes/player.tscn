@@ -252,30 +252,29 @@ trail_lifetime = 0.4
 
 [node name="Footsteps1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3e5o6")
-volume_db = -10.0
 
 [node name="Footsteps2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_n86be")
-volume_db = -10.0
 
 [node name="LadderSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_xyvan")
-volume_db = -17.0
+volume_db = -7.0
 
 [node name="UnlockSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_64hpo")
-volume_db = -5.0
+volume_db = 5.0
 
 [node name="SnakeSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_bn5o4")
-volume_db = -5.0
+volume_db = 5.0
 
 [node name="KeySFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_hp7ft")
+volume_db = 10.0
 
 [node name="AppleSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_gjash")
-volume_db = -5.0
+volume_db = 5.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
