@@ -20,6 +20,10 @@ func _on_player_moved(_new_pos):
 		tutorial_anim.play_backwards("fade_in")
 		tutorial_dismissed = true
 
+func _unhandled_input(event):
+	if event.is_action_pressed("restart"):
+		Global.kill_player()
+
 func begin_transition():
 	transitioning = true
 	scene_anim.play_backwards("scale_down")
@@ -27,7 +31,9 @@ func begin_transition():
 func _finish_transition():
 	if transitioning:
 		Global.scene_transition_finished()
-		scene_anim.play("scale_down")
 
-		if _get_player():
-			_get_player().moved.connect(_on_player_moved)
+func on_new_scene_ready():
+	scene_anim.play("scale_down")
+
+	if _get_player():
+		_get_player().moved.connect(_on_player_moved)
