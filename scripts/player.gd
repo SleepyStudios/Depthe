@@ -6,7 +6,7 @@ signal moved(new_pos: Vector2)
 @onready var dragged_sprite: Sprite2D = $DraggedSprite
 @onready var level: Level = $"../Level"
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var blood: GPUParticles2D = $BloodParticles
+@onready var blood: CPUParticles2D = $BloodParticles
 @onready var footsteps1: AudioStreamPlayer = $Footsteps1
 @onready var footsteps2: AudioStreamPlayer = $Footsteps2
 @onready var ladder_sfx: AudioStreamPlayer = $LadderSFX
@@ -97,7 +97,7 @@ func _on_area_entered(area):
 			else:
 				emit_blood()
 
-			Global.kill_player()
+			Global.call_deferred("kill_player")
 
 func emit_blood():
 	blood.emitting = true

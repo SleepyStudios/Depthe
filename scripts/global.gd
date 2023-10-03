@@ -47,7 +47,7 @@ func next_level():
 	current_level += 1
 
 	var scene_name = "end" if current_level == max_level else "level_%s" % [current_level]
-	get_tree().change_scene_to_file("res://scenes/levels/%s.tscn" % [scene_name])
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/levels/%s.tscn" % [scene_name])
 
 func kill_player():
 	if not player_is_dead:
@@ -56,8 +56,9 @@ func kill_player():
 		ui.begin_transition()
 		return
 
-	get_tree().change_scene_to_file("res://scenes/levels/level_%s.tscn" % [current_level])
 	player_is_dead = false
+
+	get_tree().call_deferred("reload_current_scene")
 
 func scene_transition_finished():
 	if player_is_dead:

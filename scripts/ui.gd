@@ -19,7 +19,10 @@ func _on_player_moved(_new_pos):
 		tutorial_dismissed = true
 
 func _unhandled_input(event):
-	if event.is_action_pressed("restart") and not restarting and Global.current_level > 0 and Global.current_level < Global.max_level:
+	if event.is_action_pressed("restart") and not restarting \
+		and not transitioning \
+		and not Global.is_game_paused() \
+		and Global.current_level > 0 and Global.current_level < Global.max_level:
 		restarting = true
 		get_tree().call_deferred("reload_current_scene")
 		restarting = false

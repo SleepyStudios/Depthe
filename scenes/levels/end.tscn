@@ -51,7 +51,7 @@ theme = ExtResource("1_xsjgx")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "
-[center][wave amp=12.0 freq=6 connected=1]Daylight beckons you as you narrowly escape the crypts [/wave][/center]"
+[center][wave amp=12.0 freq=6 connected=1]Daylight beckons you after narrowly escaping the crypts [/wave][/center]"
 
 [node name="Stats" type="HFlowContainer" parent="CanvasLayer"]
 anchors_preset = 8
