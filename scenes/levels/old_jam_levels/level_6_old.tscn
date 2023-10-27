@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://calq6hu1tyor1"]
+
+[ext_resource type="TileSet" uid="uid://mee7mtgr0vjc" path="res://scenes/levels/tileset.tres" id="1_nievu"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="2_1wwej"]
+[ext_resource type="PackedScene" uid="uid://c883xmrkudb7w" path="res://scenes/player.tscn" id="3_0uh0f"]
+[ext_resource type="PackedScene" uid="uid://cb7lbqxf6prqf" path="res://scenes/map_objects/spikes.tscn" id="4_skgn8"]
+[ext_resource type="PackedScene" uid="uid://bu4u1ibkjkh1p" path="res://scenes/camera.tscn" id="5_60ls6"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Level" type="TileMap" parent="."]
+tile_set = ExtResource("1_nievu")
+format = 2
+layer_0/name = "Ground"
+layer_0/tile_data = PackedInt32Array(262148, 131072, 2, 262149, 196608, 1, 262147, 131072, 2, 262150, 196608, 1, 262151, 196608, 1, 262146, 196608, 1, 262152, 196608, 1, 196613, 131072, 2, 327685, 131072, 2, 131077, 196608, 1, 196610, 131072, 2)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(262146, 65536, 2, 327685, 0, 1, 196610, 65536, 1)
+layer_2/name = ""
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Interactables"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array(196616, 0, 2, 262152, 0, 3)
+layer_4/name = "Collision"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array(196616, 0, 2, 262153, 262144, 1, 327689, 262144, 1, 327688, 262144, 1, 327687, 262144, 1, 327686, 262144, 1, 393222, 262144, 1, 393221, 262144, 1, 393220, 262144, 1, 327684, 262144, 1, 327683, 262144, 1, 327682, 262144, 1, 327681, 262144, 1, 262145, 262144, 1, 196609, 262144, 1, 196611, 262144, 1, 196612, 262144, 1, 131076, 262144, 1, 131078, 262144, 1, 196614, 262144, 1, 196615, 262144, 1, 196617, 262144, 1, 65540, 262144, 1, 65541, 262144, 1, 65542, 262144, 1, 131075, 262144, 1, 131074, 262144, 1, 131073, 262144, 1)
+script = ExtResource("2_1wwej")
+
+[node name="Player" parent="." instance=ExtResource("3_0uh0f")]
+position = Vector2(56, 72)
+
+[node name="Spikes" parent="." instance=ExtResource("4_skgn8")]
+position = Vector2(120, 72)
+
+[node name="Spikes2" parent="." instance=ExtResource("4_skgn8")]
+position = Vector2(88, 88)
+
+[node name="Camera2D" parent="." instance=ExtResource("5_60ls6")]
+position = Vector2(104, 64)
+offset = Vector2(-16, 2.08165e-12)
