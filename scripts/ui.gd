@@ -38,7 +38,7 @@ func begin_transition():
 		return
 
 	transitioning = true
-	scene_anim.play_backwards("scale_down")
+	scene_anim.play("scale_up")
 
 func _finish_transition():
 	if transitioning:
